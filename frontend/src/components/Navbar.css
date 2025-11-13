@@ -123,6 +123,25 @@
   }
 }
 
+/* User Button Active State */
+.user-button.active {
+  color: #8b5cf6 !important;
+  background: rgba(139, 92, 246, 0.12) !important;
+  position: relative;
+}
+
+.user-button.active::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  border-radius: 2px;
+}
+
 @media (max-width: 480px) {
   .nav-menu {
     gap: 0.5rem;
@@ -136,4 +155,19 @@
   .auth-link {
     padding: 0.5rem 1rem !important;
   }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  margin-left: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  color: inherit;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
 }

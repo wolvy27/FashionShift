@@ -1,8 +1,14 @@
 import React from 'react';
+import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from "react-router-dom";
 import './Home.css';
-import Navbar from '../components/Navbar';
+
 
 const Home = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+
   const handleUploadWardrobe = () => {
     // TODO: Navigate to wardrobe page or implement upload functionality
     alert('Upload Wardrobe functionality coming soon!');
@@ -13,22 +19,38 @@ const Home = () => {
     alert('Styles page coming soon!');
   };
 
-  const handleViewWardrobe = () => {
-    // TODO: Navigate to wardrobe page
-    alert('Wardrobe page coming soon!');
+   const handleViewWardrobe = () => {
+    navigate("/wardrobe");
   };
 
-  const handleNavigation = (page) => {
-    // TODO: Implement navigation logic
-    alert(`Navigating to ${page} page coming soon!`);
+//   const handleNavigation = (page) => {
+//   switch (page) {
+//     case 'home': navigate('/'); break;
+//     case 'wardrobe': navigate('/wardrobe'); break;
+//     case 'styles': navigate('/styles'); break;
+//     case 'login': navigate('/login'); break;
+//     default: break;
+//   }
+// };
+
+
+  const getUserDisplayName = () => {
+    if (user?.user_metadata?.full_name) {
+      return user.user_metadata.full_name;
+    }
+    return user?.email?.split('@')[0] || 'User';
   };
 
   return (
     <div className="home-container">
-      <Navbar currentPage="home" onNavigate={handleNavigation} />
       <header className="home-header">
         <h1 className="app-title">Fashion Shift</h1>
-        <p className="app-subtitle">Transform Your Wardrobe with AI-Powered Style</p>
+        <p className="app-subtitle">
+          {user 
+            ? `Welcome back, ${getUserDisplayName()}! Transform Your Wardrobe with AI-Powered Style` 
+            : 'Transform Your Wardrobe with AI-Powered Style'
+          }
+        </p>
       </header>
 
       <main className="home-main">
@@ -39,6 +61,11 @@ const Home = () => {
               Discover new outfit combinations, organize your wardrobe, and get 
               personalized style recommendations powered by AI.
             </p>
+            {!user && (
+              <div className="auth-prompt">
+                <p><strong>Sign up today to get started with your personalized wardrobe!</strong></p>
+              </div>
+            )}
           </div>
         </div>
 

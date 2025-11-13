@@ -1,10 +1,13 @@
+/* Google Fonts import must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
 .home-container {
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e8f2ff 25%, #f5f0ff 50%, #fff0f8 75%, #f0fff4 100%);
-  color: #2d3748;
+  background: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
@@ -23,10 +26,15 @@
   z-index: 1;
 }
 
+/* Hide decorative overlays in dark mode to keep contrast */
+.dark .home-container::before {
+  display: none;
+}
+
 .home-header {
   text-align: center;
   padding: 4rem 2rem 3rem;
-  background: rgba(240, 244, 255, 0.95);
+  background: var(--header-bg);
   backdrop-filter: blur(25px);
   border-bottom: 1px solid rgba(139, 92, 246, 0.15);
   box-shadow: 0 12px 40px rgba(139, 92, 246, 0.1);
@@ -63,7 +71,7 @@
 .app-subtitle {
   font-size: 1.4rem;
   margin: 2rem 0 0 0;
-  color: #64748b;
+  color: var(--muted);
   font-weight: 300;
   font-style: italic;
   letter-spacing: 1px;
@@ -95,7 +103,7 @@
   font-size: 3.2rem;
   margin-bottom: 2rem;
   font-weight: 300;
-  color: #334155;
+  color: var(--text);
   font-family: 'Playfair Display', serif;
   letter-spacing: -1px;
   text-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
@@ -106,7 +114,7 @@
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.8;
-  color: #64748b;
+  color: var(--muted);
   font-weight: 300;
   text-shadow: none;
 }
@@ -192,7 +200,7 @@
   width: 100%;
   text-align: center;
   padding: 4rem 0;
-  background: rgba(240, 244, 255, 0.6);
+  background: var(--panel-bg);
   border-radius: 35px;
   backdrop-filter: blur(25px);
   box-shadow: 0 25px 70px rgba(139, 92, 246, 0.1);
@@ -203,7 +211,7 @@
   font-size: 3rem;
   margin-bottom: 3.5rem;
   font-weight: 300;
-  color: #334155;
+  color: var(--text);
   font-family: 'Playfair Display', serif;
   letter-spacing: -1px;
   text-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
@@ -219,7 +227,7 @@
 }
 
 .feature-card {
-  background: rgba(248, 250, 252, 0.8);
+  background: var(--card-bg);
   backdrop-filter: blur(25px);
   padding: 3rem 2.5rem;
   border-radius: 28px;
@@ -266,13 +274,13 @@
   font-size: 1.6rem;
   margin-bottom: 1rem;
   font-weight: 400;
-  color: #334155;
+  color: var(--text);
   font-family: 'Playfair Display', serif;
   text-shadow: none;
 }
 
 .feature-card p {
-  color: #64748b;
+  color: var(--muted);
   line-height: 1.7;
   font-weight: 300;
   font-size: 1.05rem;
@@ -282,7 +290,7 @@
 .home-footer {
   text-align: center;
   padding: 3rem 2rem;
-  background: rgba(240, 244, 255, 0.6);
+  background: var(--panel-bg);
   margin-top: auto;
   border-top: 1px solid rgba(139, 92, 246, 0.12);
   backdrop-filter: blur(25px);
@@ -290,15 +298,12 @@
 
 .home-footer p {
   margin: 0;
-  color: #94a3b8;
+  color: var(--muted);
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.8px;
   text-shadow: none;
 }
-
-/* Add Google Fonts import at the top */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 /* Additional styling */
 .btn-icon {
