@@ -1,4 +1,4 @@
-package com.example.aidigitalwardrobe.presentationlayer;
+package com.example.aidigitalwardrobe.presentationlayer.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,4 +13,5 @@ public class UserResponseModel {
     private String userId;
     private String username;
     private String userImagePath;
+    private boolean isActive;
 }
