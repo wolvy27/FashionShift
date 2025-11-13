@@ -1,12 +1,10 @@
 package com.example.aidigitalwardrobe.dataaccesslayer.clothingitem;
 
 
+import com.example.aidigitalwardrobe.dataaccesslayer.user.User;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.UserIdentifier;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "clothing_items")
@@ -32,4 +30,13 @@ public class ClothingItem {
 
     @Enumerated(EnumType.STRING)
     private MaterialType materialType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "user_id",
+            referencedColumnName = "id"
+    )
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private User user;
 }
