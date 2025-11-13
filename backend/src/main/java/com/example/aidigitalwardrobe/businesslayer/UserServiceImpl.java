@@ -3,10 +3,12 @@ package com.example.aidigitalwardrobe.businesslayer;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.User;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.UserIdentifier;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.UserRepository;
-import com.example.aidigitalwardrobe.presentationlayer.UserRegistrationRequest;
-import com.example.aidigitalwardrobe.presentationlayer.UserResponseModel;
+import com.example.aidigitalwardrobe.presentationlayer.user.UserRegistrationRequest;
+import com.example.aidigitalwardrobe.presentationlayer.user.UserResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -31,5 +33,14 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(newUser);
     }
 
-    public UserResponseModel
+    @Override
+    public List<UserResponseModel> getAllUsers() {
+        return List.of();
+    }
+
+    @Override
+    public UserResponseModel getUserByUserId() {
+        return null;
+    }
+
 }
