@@ -1,6 +1,6 @@
-package com.example.aidigitalwardrobe.presentationlayer;
+package com.example.aidigitalwardrobe.presentationlayer.user;
 
-import com.example.aidigitalwardrobe.businesslayer.UserService;
+import com.example.aidigitalwardrobe.businesslayer.user.UserService;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
