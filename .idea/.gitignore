@@ -1,8 +1,51 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+# ==================================
+#  IDE, OS & Editor-Specific Files
+# ==================================
+# IntelliJ
+.idea/
+shelf/
+workspace.xml
+httpRequests/
+dataSources/
+dataSources.local.xml
+*.iml
+
+# macOS
+.DS_Store
+
+
+# ==================================
+#  OUR HACKATHON SECRETS
+#  (This is the most important part)
+# ==================================
+# Ignore the file with our passwords and API keys
+backend/src/main/resources/application.yml
+
+# Ignore environment files from the frontend
+frontend/.env
+frontend/.env.local
+
+
+# ==================================
+#  Build Artifacts & Dependencies
+# ==================================
+# Java / Gradle
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+.gradle/
+.project
+.settings
+
+# Node.js
+node_modules/
+dist/
+.npm/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
