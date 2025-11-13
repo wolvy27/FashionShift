@@ -24,7 +24,8 @@ public class User {
 
     private String userImagePath;
 
-    private boolean isActive;
+    @Builder.Default
+    private boolean isActive = true;
 
     @OneToMany(
             mappedBy = "user",

@@ -31,6 +31,12 @@ public class ClothingItem {
     @Enumerated(EnumType.STRING)
     private MaterialType materialType;
 
+    @Enumerated(EnumType.STRING)
+    private Style style;
+
+    @Enumerated(EnumType.STRING)
+    private WeatherTag weatherTag;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(
             name = "user_id",

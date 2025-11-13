@@ -21,4 +21,4 @@ spring:
 
   google:
     ai:
-      api-key: [ YOUR_GOOGLE_AI_STUDIO_API_KEY_HERE ]
+      api-key: AIzaSyAF4Gv_EDC_XFYBgjrB9ZSJaUbDCA4joFI
