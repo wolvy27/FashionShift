@@ -23,4 +23,6 @@ public class User {
     private String username;
 
     private String userImagePath;
+
+    private boolean isActive;
 }

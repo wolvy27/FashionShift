@@ -4,6 +4,7 @@ import com.example.aidigitalwardrobe.dataaccesslayer.user.User;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.UserIdentifier;
 import com.example.aidigitalwardrobe.dataaccesslayer.user.UserRepository;
 import com.example.aidigitalwardrobe.presentationlayer.UserRegistrationRequest;
+import com.example.aidigitalwardrobe.presentationlayer.UserResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,11 @@ public class UserServiceImpl implements UserService {
                 .userIdentifier(userIdentifier)
                 .username(request.username())
                 .userImagePath(null)
+                .isActive(true)
                 .build();
 
         return userRepository.save(newUser);
     }
+
+    public UserResponseModel
 }

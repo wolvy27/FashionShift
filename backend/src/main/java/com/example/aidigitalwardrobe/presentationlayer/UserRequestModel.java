@@ -12,4 +12,5 @@ public class UserRequestModel {
 
     private String username;
     private String userImagePath;
+    private boolean isActive;
 }
