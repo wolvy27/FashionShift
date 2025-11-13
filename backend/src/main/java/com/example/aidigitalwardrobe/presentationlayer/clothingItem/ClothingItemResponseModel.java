@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClothingItemResponseModel {
-    private String clothingItemIdentifier;
+    private String clothingItemId;
+    private String userId;
     private ClothingType clothingType;
     private ColorType colorType;
     private String clothingImagePath;
