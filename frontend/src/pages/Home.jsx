@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   const handleUploadWardrobe = () => {
@@ -24,35 +25,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <span className="logo-text">Fashion Shift</span>
-          </div>
-          <ul className="nav-menu">
-            <li className="nav-item">
-              <a href="#" className="nav-link active" onClick={() => handleNavigation('home')}>
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link" onClick={() => handleNavigation('wardrobe')}>
-                Wardrobe
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link" onClick={() => handleNavigation('styles')}>
-                Styles
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link auth-link" onClick={() => handleNavigation('login')}>
-                Login/Signup
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar currentPage="home" onNavigate={handleNavigation} />
       <header className="home-header">
         <h1 className="app-title">Fashion Shift</h1>
         <p className="app-subtitle">Transform Your Wardrobe with AI-Powered Style</p>
